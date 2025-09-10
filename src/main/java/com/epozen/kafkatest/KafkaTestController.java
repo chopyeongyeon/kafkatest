@@ -119,11 +119,6 @@ public class KafkaTestController {
                     int replicaCount = partition.replicas().size();
                     int isrCount = partition.isr().size();
                     
-                    System.out.println("partition : " + partition.partition());
-                    System.out.println("replicasCount : " + replicaCount);
-                    System.out.println("isrCount : " + isrCount);
-                    System.out.println("topicPartition : " + new TopicPartition(topic, partition.partition()));
-                    
                     if (isrCount < replicaCount) {
                     	Map<String, Object> partitionInfo = new HashMap<>();
                         partitionInfo.put("partition", partition.partition());
